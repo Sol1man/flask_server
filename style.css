@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.804);
+    color: aliceblue;
+}
+
+button {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+    transition: transform 0.5s ease-in-out;
+
+}
+
+button:first-child {
+    background-color: greenyellow;
+    padding: 2rem;
+    border-radius: 5%;
+}
+
+button:nth-child(2) {
+    background-color: rgba(255, 0, 0, 0.525);
+    padding: 2rem;
+    border-radius: 5%;
+}
+
+.main {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.main button {
+    margin: 2rem;
+}

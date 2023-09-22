@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>LED Stat: <span id="stat"></span></div>
+    <div class="main">
+        <button onclick="ledOn()"> Click ON</button>
+        <button onclick="ledOff()"> Click OFF</button>
+    </div>
+    <script>
+        async function ledOn() {
+            fetch("http://127.0.0.1:5000?led=on").then((res) => {
+                res.json().then((d) => {
+                    document.getElementById("stat").innerHTML = d.data;
+                })
+            });
+
+        }
+        async function ledOff() {
+            const post = await fetch("http://127.0.0.1:5000?led=off").then((res) => {
+                res.json().then((d) => {
+                    document.getElementById("stat").innerHTML = d.data;
+                })
+            });
+        }
+    </script>
+</body>
+
+</html>
